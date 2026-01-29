@@ -3,6 +3,7 @@
   $phone = $s->phone ?? null;
   $email = $s->email ?? null;
   $address = $s->address ?? null;
+  $workSchedule = $s->work_schedule ?? null;
   $orgForm = $s->organizational_legal_form ?? null;
   $fullName = $s->full_company_name ?? null;
   $legalName = $s->legal_name ?? null;
@@ -74,8 +75,14 @@
                     <dd class="text-slate-900">{{ $address }}</dd>
                   </div>
                 @endif
+                @if($workSchedule)
+                  <div class="flex flex-col sm:flex-row sm:py-4 py-3 px-6 gap-2 sm:gap-4 bg-white sm:even:bg-stone-50/50">
+                    <dt class="flex-shrink-0 w-full sm:w-40 text-sm font-medium uppercase tracking-wider text-slate-500">Режим работы</dt>
+                    <dd class="text-slate-900">{{ $workSchedule }}</dd>
+                  </div>
+                @endif
               </dl>
-              @if(!$phone && !$email && !$address)
+              @if(!$phone && !$email && !$address && !$workSchedule)
                 <p class="px-6 py-8 text-slate-500">Контактные данные заполняются в разделе «Реквизиты» админ-панели.</p>
               @endif
             </div>

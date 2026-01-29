@@ -41,7 +41,26 @@ Route::get('/legal/terms', fn () => view('legal.terms'))->name('legal.terms');
 Route::get('/legal/personal-data', fn () => view('legal.personal-data'))->name('legal.personal-data');
 
 Route::get('/api/employees', function (\Illuminate\Http\Request $request) {
-    $q = $request->input('q', '');
-    // Заглушка: API сотрудников пока нет — всегда пустой список
-    return response()->json(['docs' => []]);
+    $q = trim($request->input('q', ''));
+    if (strlen($q) < 2) {
+        return response()->json(['docs' => []]);
+    }
+    $like = '%' . str_replace(['\\', '%', '_'], ['\\\\', '\\%', '\\_'], $q) . '%';
+    $docs = \App\Models\Employee::query()
+        ->where('is_active', true)
+        ->where(function ($query) use ($like) {
+            $query->where('employee_id', 'like', $like)
+                ->orWhere('full_name', 'like', $like);
+        })
+        ->limit(10)
+        ->get()
+        ->map(fn (\App\Models\Employee $e) => [
+            'fullName' => $e->full_name,
+            'position' => $e->position,
+            'employeeId' => $e->employee_id,
+            'isActive' => $e->is_active,
+        ])
+        ->values()
+        ->all();
+    return response()->json(['docs' => $docs]);
 });

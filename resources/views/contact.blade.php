@@ -2,6 +2,8 @@
   $contactPhone = $settings->phone ?? '8 800 500 29 01';
   $contactEmail = $settings->email ?? 'info@pkoadmiral.ru';
   $contactAddress = $settings->address ?? 'Россия, работаем по всей стране';
+  $contactWorkSchedule = $settings->work_schedule ?? null;
+  $workScheduleLines = $contactWorkSchedule ? array_map('trim', explode("\n", $contactWorkSchedule)) : [];
 @endphp
 <x-layouts.app title="Контакты — ПКО Адмирал">
   <div class="min-h-screen bg-white text-slate-900">
@@ -65,8 +67,14 @@
                 <svg class="h-6 w-6 text-slate-900" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
               </div>
               <h3 class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">Режим работы</h3>
-              <p class="font-bold text-slate-900 mb-1" style="color: #243468;">Пн-Пт: 9:00 - 21:00</p>
-              <p class="text-xs text-slate-600">Сб-Вс: 10:00 - 18:00</p>
+              @if(!empty($workScheduleLines))
+                <p class="font-bold text-slate-900 mb-1" style="color: #243468;">{{ $workScheduleLines[0] }}</p>
+                @foreach(array_slice($workScheduleLines, 1) as $line)
+                  <p class="text-xs text-slate-600">{{ $line }}</p>
+                @endforeach
+              @else
+                <p class="text-slate-600 text-sm">Указан в разделе «Реквизиты»</p>
+              @endif
             </div>
           </div>
         </div>

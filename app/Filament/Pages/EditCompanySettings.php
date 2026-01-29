@@ -123,6 +123,11 @@ class EditCompanySettings extends Page
                         ->label('Адрес')
                         ->rows(3)
                         ->columnSpanFull(),
+                    \Filament\Forms\Components\TextInput::make('work_schedule')
+                        ->label('Режим работы')
+                        ->placeholder('Например: Пн–Пт 9:00–18:00')
+                        ->maxLength(255)
+                        ->columnSpanFull(),
                 ])
                 ->columns(2),
             Section::make('Юридические данные')
