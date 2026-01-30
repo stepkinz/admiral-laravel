@@ -10,6 +10,7 @@ use Filament\Http\Middleware\DispatchServingFilamentEvent;
 use Filament\Pages\Dashboard;
 use Filament\Panel;
 use Filament\PanelProvider;
+use Filament\View\PanelsRenderHook;
 use Filament\Support\Colors\Color;
 use Filament\Widgets\AccountWidget;
 use Filament\Widgets\FilamentInfoWidget;
@@ -31,6 +32,8 @@ class AdminPanelProvider extends PanelProvider
             ->login()
             ->brandLogo(asset('images/logos/logo.svg'))
             ->brandLogoHeight('2rem')
+            ->renderHook(PanelsRenderHook::TOPBAR_LOGO_AFTER, fn () => view('filament.components.frontend-link'))
+            ->renderHook(PanelsRenderHook::SIDEBAR_LOGO_AFTER, fn () => view('filament.components.frontend-link'))
             ->colors([
                 'primary' => Color::Amber,
             ])
