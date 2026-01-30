@@ -18,6 +18,13 @@
       <x-reviews :reviews="$reviews" />
       <x-faq :faqs="$faqs" />
       <x-final-cta />
+      @if(isset($settings) && filled($settings->seo_text))
+      <section class="container mx-auto px-4 py-8 max-w-site text-slate-600 text-sm prose prose-slate max-w-none" aria-label="Дополнительная информация для поисковых систем">
+        <div class="border-t border-slate-200 pt-6">
+          {!! $settings->seo_text !!}
+        </div>
+      </section>
+      @endif
     </main>
 
     <x-footer />

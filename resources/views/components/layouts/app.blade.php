@@ -4,8 +4,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    @if($metaDescription = $meta_description ?? (isset($settings) ? $settings->meta_description : null))
+    <meta name="description" content="{{ Str::limit(strip_tags($metaDescription), 160) }}">
+    @endif
 
-    <title>{{ $title ?? config('app.name', 'Адмирал') }}</title>
+    <title>{{ $meta_title ?? $title ?? (isset($settings) ? $settings->meta_title : null) ?? config('app.name', 'Адмирал') }}</title>
 
     <link rel="icon" type="image/png" href="{{ asset('favicon.png') }}">
 

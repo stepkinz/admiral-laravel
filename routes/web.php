@@ -4,9 +4,24 @@ use App\Http\Controllers\Api\EmployeeController;
 use App\Http\Controllers\Api\PhoneCheckController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LeadController;
+use App\Services\SitemapService;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
+
+Route::get('sitemap.xml', function () {
+    $sitemap = SitemapService::createSitemap();
+    return response($sitemap->render(), 200, [
+        'Content-Type' => 'application/xml',
+        'Cache-Control' => 'public, max-age=3600',
+    ]);
+})->name('sitemap');
+
+Route::get('robots.txt', function () {
+    $sitemapUrl = rtrim(config('app.url'), '/') . '/sitemap.xml';
+    $content = "User-agent: *\nDisallow:\n\nSitemap: {$sitemapUrl}\n";
+    return response($content, 200, ['Content-Type' => 'text/plain']);
+})->name('robots');
 
 Route::post('/leads', [LeadController::class, 'store'])
     ->name('leads.store')

@@ -23,6 +23,9 @@ class CompanySetting extends Model
         'bik',
         'checking_account',
         'correspondent_account',
+        'meta_title',
+        'meta_description',
+        'seo_text',
     ];
 
     /**
