@@ -43,7 +43,7 @@ class FaqResource extends Resource
                 ->columnSpanFull(),
             TextInput::make('sort_order')
                 ->label('Сортировка')
-                ->numeric()
+                ->integer()
                 ->default(0)
                 ->minValue(0),
         ]);

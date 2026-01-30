@@ -4,6 +4,7 @@ namespace App\Filament\Pages;
 
 use App\Models\CompanySetting;
 use BackedEnum;
+use Illuminate\Support\Facades\Cache;
 use Filament\Actions\Action;
 use Filament\Actions\ActionGroup;
 use Filament\Notifications\Notification;
@@ -94,6 +95,8 @@ class EditCompanySettings extends Page
         }
 
         $this->commitDatabaseTransaction();
+
+        Cache::forget('company_settings');
 
         Notification::make()
             ->title('Реквизиты сохранены')

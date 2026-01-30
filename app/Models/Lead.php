@@ -6,5 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Lead extends Model
 {
-    protected $guarded = [];
+    protected $fillable = [
+        'name',
+        'phone',
+        'status',
+    ];
 }

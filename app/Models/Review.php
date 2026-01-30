@@ -7,7 +7,14 @@ use Illuminate\Support\Facades\Storage;
 
 class Review extends Model
 {
-    protected $guarded = [];
+    protected $fillable = [
+        'author',
+        'photo',
+        'text',
+        'review_date',
+        'rating',
+        'is_visible',
+    ];
 
     protected $appends = ['photo_url'];
 
@@ -21,7 +28,7 @@ class Review extends Model
 
     public function getPhotoUrlAttribute(): ?string
     {
-        $photo = $this->attributes['photo'] ?? $this->photo ?? null;
+        $photo = $this->getRawOriginal('photo');
         if (empty($photo) || !is_string($photo)) {
             return null;
         }

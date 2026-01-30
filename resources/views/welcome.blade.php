@@ -1,5 +1,8 @@
 <x-layouts.app title="Адмирал — Помощь должникам">
-  <div class="min-h-screen bg-gradient-to-b from-blue-50 to-white" x-data="{ showModal: false }" @open-lead-modal.window="showModal = true">
+  @php
+    $openLeadModalOnLoad = $errors->has('phone') || $errors->has('name') || $errors->has('personal_data_consent');
+  @endphp
+  <div class="min-h-screen bg-gradient-to-b from-blue-50 to-white" x-data="{ showModal: {{ $openLeadModalOnLoad ? 'true' : 'false' }} }" @open-lead-modal.window="showModal = true">
     <x-top-bar />
     <x-header />
 
