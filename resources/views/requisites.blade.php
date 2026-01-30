@@ -199,24 +199,7 @@
         </div>
       </section>
 
-      {{-- CTA --}}
-      <section class="py-20 text-slate-900 relative bg-stone-50 border-b border-slate-200 swiss-pattern-lines">
-        <div class="absolute top-0 left-0 w-full h-1 bg-slate-900 opacity-10"></div>
-        <div class="container mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
-          <div class="max-w-3xl mx-auto text-center">
-            <h2 class="text-3xl md:text-4xl font-bold mb-6 tracking-tight font-serif" style="color: #243468;">Остались вопросы?</h2>
-            <p class="text-lg text-slate-700 mb-8">Свяжитесь с нами для уточнения реквизитов или условий сотрудничества</p>
-            <div class="flex flex-col sm:flex-row justify-center gap-4">
-              <a href="{{ route('contact') }}" class="inline-flex items-center justify-center px-8 py-6 text-base font-bold text-white rounded-none uppercase tracking-wider transition-opacity hover:opacity-90" style="background-color: #ED3200;">Связаться с нами</a>
-              @if($phone)
-                <a href="tel:{{ preg_replace('/\D/', '', $phone) }}" class="inline-flex items-center justify-center px-8 py-6 text-base font-bold border-2 border-slate-900 text-slate-900 rounded-none uppercase tracking-wider hover:bg-slate-50 transition-colors">{{ $phone }}</a>
-              @endif
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {{-- Лицензия — в конце, компактно --}}
+      {{-- Лицензия — компактно --}}
       <section class="py-10 md:py-12 relative bg-white border-b border-slate-200">
         <div class="container mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
           <div class="max-w-2xl mx-auto">
@@ -230,6 +213,23 @@
               <p class="text-xs text-slate-600 leading-relaxed">
                 Номер лицензии на основании которой осуществляется деятельность по возврату просроченной задолженности.
               </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {{-- CTA --}}
+      <section class="py-20 text-slate-900 relative bg-stone-50 border-b border-slate-200 swiss-pattern-lines">
+        <div class="absolute top-0 left-0 w-full h-1 bg-slate-900 opacity-10"></div>
+        <div class="container mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
+          <div class="max-w-3xl mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 tracking-tight font-serif" style="color: #243468;">Остались вопросы?</h2>
+            <p class="text-lg text-slate-700 mb-8">Свяжитесь с нами для уточнения реквизитов или условий сотрудничества</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+              <a href="{{ route('contact') }}" class="inline-flex items-center justify-center px-8 py-6 text-base font-bold text-white rounded-none uppercase tracking-wider transition-opacity hover:opacity-90" style="background-color: #ED3200;">Связаться с нами</a>
+              @if($phone)
+                <a href="tel:{{ preg_replace('/\D/', '', $phone) }}" class="inline-flex items-center justify-center px-8 py-6 text-base font-bold border-2 border-slate-900 text-slate-900 rounded-none uppercase tracking-wider hover:bg-slate-50 transition-colors">{{ $phone }}</a>
+              @endif
             </div>
           </div>
         </div>

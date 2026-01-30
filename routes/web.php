@@ -64,3 +64,57 @@ Route::get('/api/employees', function (\Illuminate\Http\Request $request) {
         ->all();
     return response()->json(['docs' => $docs]);
 });
+
+Route::get('/api/phones/check', function (\Illuminate\Http\Request $request) {
+    $phone = trim($request->input('phone', ''));
+    if (empty($phone)) {
+        return response()->json(['found' => false]);
+    }
+    
+    // Нормализуем номер: удаляем все нецифровые символы
+    $normalized = preg_replace('/\D/', '', $phone);
+    
+    // Если номер начинается с 8, заменяем на 7
+    if (str_starts_with($normalized, '8') && strlen($normalized) === 11) {
+        $normalized = '7' . substr($normalized, 1);
+    }
+    
+    // Если номер начинается с +7 или просто 7, оставляем как есть
+    if (str_starts_with($normalized, '7') && strlen($normalized) === 11) {
+        // Оставляем как есть
+    } elseif (strlen($normalized) === 10) {
+        // Если 10 цифр, добавляем 7 в начало
+        $normalized = '7' . $normalized;
+    }
+    
+    if (strlen($normalized) < 11) {
+        return response()->json(['found' => false]);
+    }
+    
+    // Ищем номер в базе (сравниваем нормализованные версии)
+    $phoneRecord = \App\Models\Phone::query()
+        ->where('is_active', true)
+        ->get()
+        ->first(function ($record) use ($normalized) {
+            $recordNormalized = preg_replace('/\D/', '', $record->phone_number);
+            // Нормализуем номер из базы аналогично
+            if (str_starts_with($recordNormalized, '8') && strlen($recordNormalized) === 11) {
+                $recordNormalized = '7' . substr($recordNormalized, 1);
+            } elseif (strlen($recordNormalized) === 10) {
+                $recordNormalized = '7' . $recordNormalized;
+            }
+            return $recordNormalized === $normalized;
+        });
+    
+    if ($phoneRecord) {
+        return response()->json([
+            'found' => true,
+            'phone' => [
+                'phone_number' => $phoneRecord->phone_number,
+                'description' => $phoneRecord->description,
+            ],
+        ]);
+    }
+    
+    return response()->json(['found' => false]);
+});

@@ -117,7 +117,7 @@
         </div>
       </section>
 
-      <x-employee-checker />
+      <x-phone-checker />
 
       {{-- Map placeholder — Swiss Legal style --}}
       <section class="py-16 md:py-24 relative bg-stone-50 border-b border-slate-200 swiss-pattern-lines">
