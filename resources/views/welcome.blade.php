@@ -15,7 +15,6 @@
       <x-step-by-step />
       <x-case-studies />
       <x-debt-calculator />
-      <x-reviews :reviews="$reviews" />
       <x-faq :faqs="$faqs" />
       <x-final-cta />
       @if(isset($settings) && filled($settings->seo_text))
