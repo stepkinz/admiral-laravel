@@ -222,7 +222,7 @@
               </div>
             </div>
             <div class="bg-gradient-to-r from-green-500 to-green-600 text-white p-6 rounded-xl text-center">
-              <p class="text-sm opacity-90 mb-2">🎉 Ваша выгода с нами:</p>
+              <p class="text-sm opacity-90 mb-2">🎉 Ваша выгода с индивидуальными условиями:</p>
               <p class="text-4xl font-bold mb-2" x-text="formatNumber(withoutUsDifference) + ' ₽'"></p>
               <p class="text-sm opacity-90">Это то, что вы НЕ переплатите, обратившись к нам</p>
             </div>
