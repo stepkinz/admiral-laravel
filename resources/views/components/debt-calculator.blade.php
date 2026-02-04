@@ -1,5 +1,6 @@
 {{-- DebtCalculator — полная версия 1:1 из React; заголовок в стиле Swiss Legal. --}}
-<section class="py-16 md:py-24 relative bg-white border-b border-slate-200 swiss-pattern-diagonal" x-data="debtCalculator()" x-init="init()">
+<section class="py-16 md:py-24 relative bg-white border-b border-slate-200 swiss-pattern-diagonal"
+  x-data="debtCalculator()" x-init="init()">
   <div class="absolute top-0 left-0 w-full h-1 bg-slate-900 opacity-10"></div>
   <div class="absolute top-1/2 left-0 w-1 h-40 bg-slate-900 opacity-5"></div>
   <div class="absolute bottom-0 right-0 w-40 h-1 bg-slate-900 opacity-10"></div>
@@ -16,45 +17,32 @@
       </h2>
 
       <div class="inline-flex items-center gap-2 bg-slate-100 rounded-xl border border-slate-200 p-1.5 shadow-sm">
-        <button
-          type="button"
-          x-on:click="showComparison = false"
-          :class="!showComparison 
+        <button type="button" x-on:click="showComparison = false" :class="!showComparison 
             ? 'bg-white text-slate-900 shadow-md border border-slate-200 scale-105' 
             : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50 active:scale-95'"
-          class="px-6 py-3 rounded-lg font-semibold transition-all duration-200 ease-out relative flex items-center gap-2 min-w-[140px] justify-center"
-        >
-          <svg 
-            class="w-5 h-5 transition-all duration-200"
-            :class="!showComparison ? 'text-slate-900' : 'text-slate-500'"
-            fill="none" 
-            stroke="currentColor" 
-            viewBox="0 0 24 24"
-          >
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          class="px-6 py-3 rounded-lg font-semibold transition-all duration-200 ease-out relative flex items-center gap-2 min-w-[140px] justify-center">
+          <svg class="w-5 h-5 transition-all duration-200"
+            :class="!showComparison ? 'text-slate-900' : 'text-slate-500'" fill="none" stroke="currentColor"
+            viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
           </svg>
           <span>С нами</span>
-          <span x-show="!showComparison" class="absolute bottom-0 left-1/2 -translate-x-1/2 w-8 h-0.5 bg-[#243468] rounded-full"></span>
+          <span x-show="!showComparison"
+            class="absolute bottom-0 left-1/2 -translate-x-1/2 w-8 h-0.5 bg-[#243468] rounded-full"></span>
         </button>
-        <button
-          type="button"
-          x-on:click="showComparison = true"
-          :class="showComparison 
+        <button type="button" x-on:click="showComparison = true" :class="showComparison 
             ? 'bg-white text-slate-900 shadow-md border border-slate-200 scale-105' 
             : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50 active:scale-95'"
-          class="px-6 py-3 rounded-lg font-semibold transition-all duration-200 ease-out relative flex items-center gap-2 min-w-[140px] justify-center"
-        >
-          <svg 
-            class="w-5 h-5 transition-all duration-200"
-            :class="showComparison ? 'text-slate-900' : 'text-slate-500'"
-            fill="none" 
-            stroke="currentColor" 
-            viewBox="0 0 24 24"
-          >
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+          class="px-6 py-3 rounded-lg font-semibold transition-all duration-200 ease-out relative flex items-center gap-2 min-w-[140px] justify-center">
+          <svg class="w-5 h-5 transition-all duration-200" :class="showComparison ? 'text-slate-900' : 'text-slate-500'"
+            fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
           </svg>
           <span>Сравнение</span>
-          <span x-show="showComparison" class="absolute bottom-0 left-1/2 -translate-x-1/2 w-8 h-0.5 bg-[#243468] rounded-full"></span>
+          <span x-show="showComparison"
+            class="absolute bottom-0 left-1/2 -translate-x-1/2 w-8 h-0.5 bg-[#243468] rounded-full"></span>
         </button>
       </div>
     </div>
@@ -67,56 +55,40 @@
           <div class="flex items-center gap-2 mb-3">
             <label class="text-base font-medium text-gray-900">Сумма задолженности</label>
             <div class="relative">
-              <button
-                type="button"
-                class="text-gray-400 hover:text-gray-600"
-                x-on:mouseenter="showDebtTooltip = true"
-                x-on:mouseleave="showDebtTooltip = false"
-              >
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              <button type="button" class="text-gray-400 hover:text-gray-600" x-on:mouseenter="showDebtTooltip = true"
+                x-on:mouseleave="showDebtTooltip = false">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
               </button>
-              <div
-                x-show="showDebtTooltip"
-                x-transition
-                class="absolute left-0 top-6 z-10 w-64 p-3 bg-gray-900 text-white text-xs rounded-lg shadow-lg"
-              >
-                Актуальный размер задолженности можно узнать при звонке в наш колл-центр, на Госуслугах или при проверке кредитной истории.
+              <div x-show="showDebtTooltip" x-transition
+                class="absolute left-0 top-6 z-10 w-64 p-3 bg-gray-900 text-white text-xs rounded-lg shadow-lg">
+                Актуальный размер задолженности можно узнать при звонке в наш колл-центр, на Госуслугах или при проверке
+                кредитной истории.
               </div>
             </div>
           </div>
           <div class="relative mb-4">
-            <input
-              type="range"
-              min="0"
-              max="3000000"
-              step="1000"
-              x-model.number="debtAmount"
+            <input type="range" min="0" max="3000000" step="1000" x-model.number="debtAmount"
               class="debt-slider w-full appearance-none cursor-pointer"
-              :style="'background: linear-gradient(to right, rgba(237, 50, 0, 0.25) 0%, rgba(237, 50, 0, 0.25) ' + (debtAmount / 3000000 * 100) + '%, #f1f5f9 ' + (debtAmount / 3000000 * 100) + '%, #f1f5f9 100%)'"
-            />
+              :style="'background: linear-gradient(to right, rgba(237, 50, 0, 0.25) 0%, rgba(237, 50, 0, 0.25) ' + (debtAmount / 3000000 * 100) + '%, #f1f5f9 ' + (debtAmount / 3000000 * 100) + '%, #f1f5f9 100%)'" />
             <div class="flex justify-between text-xs text-gray-500 mt-2">
               <span>0 ₽</span>
               <span>3 000 000 ₽</span>
             </div>
           </div>
           <div class="flex items-center justify-center gap-3">
-            <input
-              type="text"
-              :value="formatNumber(debtAmount)"
-              x-on:input="handleDebtAmountInput($event.target.value)"
+            <input type="text" :value="formatNumber(debtAmount)" x-on:input="handleDebtAmountInput($event.target.value)"
               x-on:blur="formatDebtAmount()"
-              class="w-40 px-3 py-2 text-center text-xl font-bold border-2 border-gray-300 rounded-lg focus:border-[#ed3200] focus:outline-none"
-            />
+              class="w-40 px-3 py-2 text-center text-xl font-bold border-2 border-gray-300 rounded-lg focus:border-[#ed3200] focus:outline-none" />
             <span class="text-xl text-gray-600">₽</span>
           </div>
           <div class="mt-4 flex flex-wrap gap-2 justify-center">
             <template x-for="preset in presets" :key="preset.value">
-              <button
-                type="button"
-                x-on:click="debtAmount = preset.value"
+              <button type="button" x-on:click="debtAmount = preset.value"
                 class="px-3 py-1.5 text-sm bg-gray-100 hover:bg-[#ed3200] hover:text-white rounded-full transition-colors"
-                x-text="preset.label"
-              ></button>
+                x-text="preset.label"></button>
             </template>
           </div>
         </div>
@@ -127,15 +99,9 @@
             <label class="text-base font-medium text-gray-900">Срок погашения в месяцах</label>
           </div>
           <div class="relative mb-4">
-            <input
-              type="range"
-              :min="minMonths"
-              max="12"
-              step="1"
-              x-model.number="months"
+            <input type="range" :min="minMonths" max="12" step="1" x-model.number="months"
               class="months-slider w-full appearance-none cursor-pointer"
-              :style="'background: linear-gradient(to right, rgba(237, 50, 0, 0.25) 0%, rgba(237, 50, 0, 0.25) ' + (12 === minMonths ? 100 : ((months - minMonths) / (12 - minMonths) * 100)) + '%, #f1f5f9 ' + (12 === minMonths ? 100 : ((months - minMonths) / (12 - minMonths) * 100)) + '%, #f1f5f9 100%)'"
-            />
+              :style="'background: linear-gradient(to right, rgba(237, 50, 0, 0.25) 0%, rgba(237, 50, 0, 0.25) ' + (12 === minMonths ? 100 : ((months - minMonths) / (12 - minMonths) * 100)) + '%, #f1f5f9 ' + (12 === minMonths ? 100 : ((months - minMonths) / (12 - minMonths) * 100)) + '%, #f1f5f9 100%)'" />
             <div class="flex justify-between text-xs text-gray-500 mt-2">
               <span x-text="minMonths"></span>
               <span>12</span>
@@ -154,36 +120,30 @@
           <div class="flex items-center gap-2 mb-3">
             <label class="text-base font-medium text-gray-900">Размер списания:</label>
             <div class="relative">
-              <button
-                type="button"
-                class="text-gray-400 hover:text-gray-600"
-                x-on:mouseenter="showDiscountTooltip = true"
-                x-on:mouseleave="showDiscountTooltip = false"
-              >
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              <button type="button" class="text-gray-400 hover:text-gray-600"
+                x-on:mouseenter="showDiscountTooltip = true" x-on:mouseleave="showDiscountTooltip = false">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
               </button>
-              <div
-                x-show="showDiscountTooltip"
-                x-transition
-                class="absolute left-0 top-6 z-10 w-64 p-3 bg-gray-900 text-white text-xs rounded-lg shadow-lg"
-              >
-                Компания ПКО Адмирал предоставляет индивидуальные условия погашения. Также для многих клиентов доступны акции прощения.
+              <div x-show="showDiscountTooltip" x-transition
+                class="absolute left-0 top-6 z-10 w-64 p-3 bg-gray-900 text-white text-xs rounded-lg shadow-lg">
+                Компания ПКО Адмирал предоставляет индивидуальные условия погашения. Также для многих клиентов доступны
+                акции прощения.
               </div>
             </div>
           </div>
           <div class="flex gap-3">
-            <template x-for="pct in [10, 25, 50]" :key="pct">
-              <button
-                type="button"
-                x-on:click="discountPercent = pct"
+            <template x-for="pct in [10, 20, 30]" :key="pct">
+              <button type="button" x-on:click="discountPercent = pct"
                 :class="discountPercent === pct ? 'bg-[#8B2D1C] text-white' : 'bg-gray-200 text-gray-700 hover:bg-gray-300'"
-                class="flex-1 py-3 px-4 rounded-lg font-medium transition-colors"
-                x-text="pct + '%'"
-              ></button>
+                class="flex-1 py-3 px-4 rounded-lg font-medium transition-colors" x-text="pct + '%'"></button>
             </template>
           </div>
           <p class="text-sm text-gray-600 mt-3">
-            Чем больше сумма списания, тем более короткий срок погашения требуется. Если условия не подходят, то стоит связаться со специалистом ПКО Адмирал для обсуждения индивидуальных.
+            Чем больше сумма списания, тем более короткий срок погашения требуется. Если условия не подходят, то стоит
+            связаться со специалистом ПКО Адмирал для обсуждения индивидуальных.
           </p>
         </div>
 
@@ -194,7 +154,8 @@
             <p class="text-sm text-slate-600 mb-4">Сколько получится списать?</p>
             <div class="space-y-2">
               <p class="text-3xl font-bold text-slate-900 mb-1">
-                <span x-text="formatCurrency(discount)"></span> <span class="text-xl text-slate-600 font-normal">рублей</span>
+                <span x-text="formatCurrency(discount)"></span> <span
+                  class="text-xl text-slate-600 font-normal">рублей</span>
               </p>
               <p class="text-sm text-slate-600 leading-relaxed">
                 при заключении и соблюдении платежного соглашения.
@@ -210,7 +171,7 @@
           <div class="space-y-6">
             <div class="grid grid-cols-2 gap-4">
               <div class="bg-red-50 border-2 border-red-200 p-4 rounded-xl">
-                <h4 class="text-sm font-bold text-red-900 mb-3 text-center">❌ Без нашей помощи</h4>
+                <h4 class="text-sm font-bold text-red-900 mb-3 text-center">❌ Без инд. условий</h4>
                 <div class="space-y-2 text-sm">
                   <div class="bg-white rounded p-2">
                     <p class="text-xs text-gray-600">Сумма долга:</p>
@@ -235,7 +196,7 @@
                 </div>
               </div>
               <div class="bg-green-50 border-2 border-green-200 p-4 rounded-xl">
-                <h4 class="text-sm font-bold text-green-900 mb-3 text-center">✅ С ПКО Адмирал</h4>
+                <h4 class="text-sm font-bold text-green-900 mb-3 text-center">✅ С инд. условиями</h4>
                 <div class="space-y-2 text-sm">
                   <div class="bg-white rounded p-2">
                     <p class="text-xs text-gray-600">Сумма долга:</p>
@@ -282,7 +243,8 @@
                 </div>
                 <div class="pt-2 border-t flex justify-between items-center">
                   <span class="font-bold text-gray-900">Итого экономия:</span>
-                  <span class="font-bold text-xl text-green-600" x-text="formatNumber(withoutUsDifference) + ' ₽'"></span>
+                  <span class="font-bold text-xl text-green-600"
+                    x-text="formatNumber(withoutUsDifference) + ' ₽'"></span>
                 </div>
               </div>
             </div>
@@ -291,15 +253,17 @@
 
         <template x-if="!showComparison">
           <div class="space-y-6">
-            <div class="bg-gradient-to-br from-green-500 via-green-600 to-green-700 text-white p-6 rounded-xl shadow-xl relative overflow-hidden">
+            <div
+              class="bg-gradient-to-br from-green-500 via-green-600 to-green-700 text-white p-6 rounded-xl shadow-xl relative overflow-hidden">
               {{-- Декоративный элемент --}}
               <div class="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -mr-16 -mt-16"></div>
               <div class="absolute bottom-0 left-0 w-24 h-24 bg-white/5 rounded-full -ml-12 -mb-12"></div>
-              
+
               <div class="relative z-10">
                 <div class="flex items-start justify-between mb-4">
                   <div class="flex items-center gap-3">
-                    <div class="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center border-2 border-white/30">
+                    <div
+                      class="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center border-2 border-white/30">
                       <span class="text-3xl font-bold text-white">₽</span>
                     </div>
                     <div>
@@ -315,10 +279,12 @@
 
                 <div class="bg-white/20 backdrop-blur-sm rounded-xl p-5 mb-4 border-2 border-white/30">
                   <p class="text-xs opacity-90 mb-2 uppercase tracking-wider">Вы экономите:</p>
-                  <p class="text-4xl md:text-5xl font-bold mb-3 leading-none" x-text="formatNumber(discount) + ' ₽'"></p>
+                  <p class="text-4xl md:text-5xl font-bold mb-3 leading-none" x-text="formatNumber(discount) + ' ₽'">
+                  </p>
                   <div class="flex items-center gap-2 text-xs opacity-90">
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                     <span>Гарантированная сумма списания</span>
                   </div>
@@ -330,7 +296,9 @@
                     <p class="text-lg font-bold" x-text="formatNumber(debtAmount) + ' ₽'"></p>
                   </div>
                   <div class="bg-white/25 backdrop-blur-sm rounded-lg p-3 border-2 border-white/40 relative">
-                    <div class="absolute -top-2 -right-2 bg-white text-green-600 rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold">✓</div>
+                    <div
+                      class="absolute -top-2 -right-2 bg-white text-green-600 rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold">
+                      ✓</div>
                     <p class="text-[10px] opacity-75 uppercase tracking-wider mb-1.5">Стало</p>
                     <p class="text-lg font-bold" x-text="formatNumber(finalAmount) + ' ₽'"></p>
                   </div>
@@ -339,7 +307,8 @@
                 <div class="bg-white/10 backdrop-blur-sm rounded-lg p-3 border border-white/20">
                   <div class="flex items-center gap-2 text-xs">
                     <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                     <span class="opacity-90">Это реальная экономия, которую вы получите при заключении соглашения</span>
                   </div>
@@ -350,21 +319,25 @@
               <div class="flex items-start gap-3 mb-4">
                 <div class="flex-shrink-0 w-10 h-10 bg-[#243468] rounded-lg flex items-center justify-center">
                   <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                 </div>
                 <div class="flex-1">
-                  <h3 class="text-xl font-bold text-slate-900 mb-1 font-serif" style="color: #243468;">Срок погашения</h3>
+                  <h3 class="text-xl font-bold text-slate-900 mb-1 font-serif" style="color: #243468;">Срок погашения
+                  </h3>
                   <p class="text-sm text-slate-600">Сколько времени потребуется для погашения?</p>
                 </div>
               </div>
-              
+
               <div class="bg-white border border-slate-200 rounded-lg p-4 mb-4">
                 <p class="text-2xl font-bold text-slate-900 mb-2">
-                  <span x-text="months"></span> <span x-text="months === 1 ? 'месяц' : (months < 5 ? 'месяца' : 'месяцев')"></span>
+                  <span x-text="months"></span> <span
+                    x-text="months === 1 ? 'месяц' : (months < 5 ? 'месяца' : 'месяцев')"></span>
                 </p>
                 <p class="text-sm text-slate-600 mb-3">
-                  при регулярном внесении платежей по <span class="font-bold text-slate-900" x-text="formatNumber(monthlyPayment)"></span> рублей
+                  при регулярном внесении платежей по <span class="font-bold text-slate-900"
+                    x-text="formatNumber(monthlyPayment)"></span> рублей
                 </p>
                 <div class="pt-3 border-t border-slate-100">
                   <p class="text-xs text-slate-500 mb-1">Последний платеж:</p>
@@ -374,12 +347,15 @@
 
               <div class="bg-green-50 border border-green-200 rounded-lg p-4 mb-4">
                 <div class="flex items-start gap-3">
-                  <svg class="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                  <svg class="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor"
+                    viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                   <div>
                     <p class="text-sm font-semibold text-green-900 mb-1">Без скрытых процентов</p>
-                    <p class="text-xs text-green-700 leading-relaxed">ПКО Адмирал не начисляет проценты на остаток задолженности. Вы платите только сумму списания.</p>
+                    <p class="text-xs text-green-700 leading-relaxed">ПКО Адмирал не начисляет проценты на остаток
+                      задолженности. Вы платите только сумму списания.</p>
                   </div>
                 </div>
               </div>
@@ -389,8 +365,7 @@
                 <div class="h-3 bg-slate-100 rounded-full overflow-hidden">
                   <div
                     class="h-full bg-gradient-to-r from-[#243468] to-slate-600 rounded-full transition-all duration-500 flex items-center justify-end pr-2"
-                    :style="'width: ' + (1 / months * 100) + '%'"
-                  >
+                    :style="'width: ' + (1 / months * 100) + '%'">
                     <span class="text-[10px] font-bold text-white" x-text="Math.round((1 / months * 100)) + '%'"></span>
                   </div>
                 </div>
@@ -399,11 +374,8 @@
                 </p>
               </div>
             </div>
-            <button
-              type="button"
-              x-on:click="$dispatch('open-lead-modal')"
-              class="w-full text-lg py-6 bg-primary hover:bg-primary/90 text-white font-bold rounded-lg shadow-lg transition-colors"
-            >
+            <button type="button" x-on:click="$dispatch('open-lead-modal')"
+              class="w-full text-lg py-6 bg-primary hover:bg-primary/90 text-white font-bold rounded-lg shadow-lg transition-colors">
               Получить такие условия
             </button>
           </div>
@@ -419,7 +391,8 @@
         </h3>
         <div class="grid md:grid-cols-3 gap-4 text-center">
           <div class="bg-white border border-slate-200 rounded-lg p-4 shadow-sm">
-            <div class="text-3xl font-bold text-slate-700 mb-2" x-text="'+' + formatNumber(debtAmount * 0.3) + '₽'"></div>
+            <div class="text-3xl font-bold text-slate-700 mb-2" x-text="'+' + formatNumber(debtAmount * 0.3) + '₽'">
+            </div>
             <p class="text-sm text-slate-600">Рост процентов и штрафов за <span x-text="months"></span> мес.</p>
           </div>
           <div class="bg-white border border-slate-200 rounded-lg p-4 shadow-sm">
@@ -436,14 +409,16 @@
             Итого переплата: до <span x-text="formatNumber(debtAmount * 0.37) + ' ₽'"></span>
           </p>
           <p class="text-sm text-slate-600">
-            Вместо экономии в <span class="font-semibold text-slate-900" x-text="formatNumber(discount) + ' ₽'"></span> с нами
+            Вместо экономии в <span class="font-semibold text-slate-900" x-text="formatNumber(discount) + ' ₽'"></span>
+            с нами
           </p>
         </div>
       </div>
     </div>
 
     <p class="text-sm text-gray-500 text-center mt-8 max-w-4xl mx-auto">
-      Не оферта. ПКО Адмирал предлагает индивидуальные условия погашения задолженности с учётом обстоятельств и возможностей клиента.
+      Не оферта. ПКО Адмирал предлагает индивидуальные условия погашения задолженности с учётом обстоятельств и
+      возможностей клиента.
     </p>
   </div>
 </section>
@@ -565,8 +540,8 @@
       ],
       get minMonths() {
         const d = this.debtAmount, p = this.discountPercent
-        if (d > 500000 && p === 50) return 6
-        if (d > 1000000 && p >= 25) return 8
+        if (d > 500000 && p === 30) return 6
+        if (d > 1000000 && p >= 20) return 8
         return 1
       },
       get maxDiscount() {
