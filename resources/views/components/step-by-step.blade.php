@@ -15,22 +15,31 @@
     <div class="mb-12 text-center relative">
       <div class="absolute left-1/2 top-0 -translate-x-1/2 w-24 h-px bg-slate-900 opacity-10"></div>
       <div class="absolute left-1/2 bottom-0 -translate-x-1/2 w-24 h-px bg-slate-900 opacity-10"></div>
-      <p class="text-xs tracking-widest font-medium mb-6 relative uppercase text-slate-500 pl-20">
-        <span class="absolute left-0 top-1/2 -translate-y-1/2 w-16 h-px bg-slate-900 opacity-20"></span>
-        Процесс
-      </p>
+      <div class="mb-6 flex items-center justify-center gap-4">
+        <span class="w-12 h-px bg-slate-900 opacity-20"></span>
+        <p class="text-xs tracking-widest font-medium uppercase text-slate-500">
+          Процесс
+        </p>
+        <span class="w-12 h-px bg-slate-900 opacity-20"></span>
+      </div>
       <h2 class="text-3xl md:text-4xl font-bold tracking-tight font-serif" style="color: #243468;">
         4 простых шага к решению вашего вопроса
       </h2>
     </div>
-    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-0 border border-slate-200 rounded-none">
+    <div
+      class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-0 border border-slate-200 rounded-none">
       @foreach($steps as $step)
-        <div class="p-8 border-b lg:border-b-0 lg:border-r border-slate-200 last:border-r-0 bg-white {{ $step['last'] ? 'border-l-4 border-l-slate-900' : '' }}">
+        <div
+          class="p-8 border-b lg:border-b-0 lg:border-r border-slate-200 last:border-r-0 bg-white {{ $step['last'] ? 'border-l-4 border-l-slate-900' : '' }}">
           <div class="flex justify-between items-start mb-4">
-            <span class="font-bold text-4xl tracking-tight text-slate-900" style="color: #243468;">{{ $step['num'] }}</span>
+            <span class="font-bold text-4xl tracking-tight text-slate-900"
+              style="color: #243468;">{{ $step['num'] }}</span>
             @if($step['last'])
-              <span class="flex items-center justify-center h-10 w-10 rounded-none border border-slate-900" aria-hidden="true">
-                <svg class="h-6 w-6 text-slate-900" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              <span class="flex items-center justify-center h-10 w-10 rounded-none border border-slate-900"
+                aria-hidden="true">
+                <svg class="h-6 w-6 text-slate-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
               </span>
             @endif
           </div>

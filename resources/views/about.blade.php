@@ -17,10 +17,13 @@
         <div class="absolute bottom-20 right-0 w-1 h-32 bg-slate-900 opacity-5 z-[1]"></div>
         <div class="container mx-auto px-4 sm:px-6 lg:px-12 py-20 lg:py-28 relative z-10">
           <div class="max-w-4xl mx-auto text-center">
-            <p class="text-xs tracking-widest font-medium mb-6 relative uppercase text-slate-500 pl-20">
-              <span class="absolute left-0 top-1/2 -translate-y-1/2 w-16 h-px bg-slate-900 opacity-20"></span>
-              О компании
-            </p>
+            <div class="mb-6 flex items-center justify-center gap-4">
+              <span class="w-12 h-px bg-slate-900 opacity-20"></span>
+              <p class="text-xs tracking-widest font-medium uppercase text-slate-500">
+                О компании
+              </p>
+              <span class="w-12 h-px bg-slate-900 opacity-20"></span>
+            </div>
             <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight tracking-tight font-serif" style="color: #243468;">
               О компании ПКО «Адмирал»
             </h1>
@@ -40,10 +43,13 @@
           <div class="mb-12 text-center relative">
             <div class="absolute left-1/2 top-0 -translate-x-1/2 w-24 h-px bg-slate-900 opacity-10"></div>
             <div class="absolute left-1/2 bottom-0 -translate-x-1/2 w-24 h-px bg-slate-900 opacity-10"></div>
-            <p class="text-xs tracking-widest font-medium mb-6 relative uppercase text-slate-500 pl-20">
-              <span class="absolute left-0 top-1/2 -translate-y-1/2 w-16 h-px bg-slate-900 opacity-20"></span>
-              Миссия
-            </p>
+            <div class="mb-6 flex items-center justify-center gap-4">
+              <span class="w-12 h-px bg-slate-900 opacity-20"></span>
+              <p class="text-xs tracking-widest font-medium uppercase text-slate-500">
+                Миссия
+              </p>
+              <span class="w-12 h-px bg-slate-900 opacity-20"></span>
+            </div>
             <h2 class="text-3xl md:text-4xl font-bold tracking-tight font-serif mb-6" style="color: #243468;">Наша миссия</h2>
             <p class="text-lg text-slate-700 leading-relaxed max-w-3xl mx-auto">
               Мы верим, что <strong class="text-slate-900">долг — это не приговор</strong>. Это временная трудность, которую можно решить цивилизованно и с уважением к человеку. Наша цель — превратить коллекторскую компанию из «страшилки» в партнера, который действительно помогает.
@@ -77,10 +83,13 @@
         <div class="absolute bottom-0 right-0 w-40 h-1 bg-slate-900 opacity-10"></div>
         <div class="container mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
           <div class="mb-12 text-center relative">
-            <p class="text-xs tracking-widest font-medium mb-6 relative uppercase text-slate-500 pl-20">
-              <span class="absolute left-0 top-1/2 -translate-y-1/2 w-16 h-px bg-slate-900 opacity-20"></span>
-              Принципы
-            </p>
+            <div class="mb-6 flex items-center justify-center gap-4">
+              <span class="w-12 h-px bg-slate-900 opacity-20"></span>
+              <p class="text-xs tracking-widest font-medium uppercase text-slate-500">
+                Принципы
+              </p>
+              <span class="w-12 h-px bg-slate-900 opacity-20"></span>
+            </div>
             <h2 class="text-3xl md:text-4xl font-bold tracking-tight font-serif mb-4" style="color: #243468;">Наши ценности</h2>
             <p class="text-slate-600 max-w-2xl mx-auto">Принципы, на которых строится наша работа</p>
           </div>
@@ -116,10 +125,13 @@
         <div class="absolute top-0 left-0 w-full h-1 bg-slate-900 opacity-10"></div>
         <div class="container mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
           <div class="mb-12 text-center relative">
-            <p class="text-xs tracking-widest font-medium mb-6 relative uppercase text-slate-500 pl-20">
-              <span class="absolute left-0 top-1/2 -translate-y-1/2 w-16 h-px bg-slate-900 opacity-20"></span>
-              Хронология
-            </p>
+            <div class="mb-6 flex items-center justify-center gap-4">
+              <span class="w-12 h-px bg-slate-900 opacity-20"></span>
+              <p class="text-xs tracking-widest font-medium uppercase text-slate-500">
+                Хронология
+              </p>
+              <span class="w-12 h-px bg-slate-900 opacity-20"></span>
+            </div>
             <h2 class="text-3xl md:text-4xl font-bold tracking-tight font-serif mb-4" style="color: #243468;">История компании</h2>
             <p class="text-slate-600 max-w-2xl mx-auto">Путь от стартапа до одного из лидеров отрасли</p>
           </div>
@@ -149,10 +161,13 @@
         <div class="absolute top-0 left-0 w-full h-1 bg-slate-900 opacity-10"></div>
         <div class="container mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
           <div class="mb-12 text-center relative">
-            <p class="text-xs tracking-widest font-medium mb-6 relative uppercase text-slate-500 pl-20">
-              <span class="absolute left-0 top-1/2 -translate-y-1/2 w-16 h-px bg-slate-900 opacity-20"></span>
-              Документы
-            </p>
+            <div class="mb-6 flex items-center justify-center gap-4">
+              <span class="w-12 h-px bg-slate-900 opacity-20"></span>
+              <p class="text-xs tracking-widest font-medium uppercase text-slate-500">
+                Документы
+              </p>
+              <span class="w-12 h-px bg-slate-900 opacity-20"></span>
+            </div>
             <h2 class="text-3xl md:text-4xl font-bold tracking-tight font-serif mb-4" style="color: #243468;">Лицензии и документы</h2>
             <p class="text-slate-600 max-w-2xl mx-auto">Мы работаем полностью легально и прозрачно</p>
           </div>

@@ -19,12 +19,12 @@
 
   <div class="container mx-auto px-6 lg:px-12 py-20 lg:py-32 relative z-10">
     <div class="max-w-4xl mx-auto text-center">
-      <div class="mb-4">
-        <p
-          class="text-xs tracking-widest font-medium mb-8 relative uppercase text-slate-500 swiss-decorative-line pl-20">
-          <span class="absolute left-0 top-1/2 -translate-y-1/2 w-16 h-px bg-slate-900 opacity-20"></span>
+      <div class="mb-4 flex items-center justify-center gap-4">
+        <span class="w-12 h-px bg-slate-900 opacity-20"></span>
+        <p class="text-xs tracking-widest font-medium uppercase text-slate-500 swiss-decorative-line">
           Лицензированная Коллекторская Организация
         </p>
+        <span class="w-12 h-px bg-slate-900 opacity-20"></span>
       </div>
 
       <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight tracking-tight font-serif"

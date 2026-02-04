@@ -7,10 +7,13 @@
     <div class="mb-12 text-center relative">
       <div class="absolute left-1/2 top-0 -translate-x-1/2 w-24 h-px bg-slate-900 opacity-10"></div>
       <div class="absolute left-1/2 bottom-0 -translate-x-1/2 w-24 h-px bg-slate-900 opacity-10"></div>
-      <p class="text-xs tracking-widest font-medium mb-6 relative uppercase text-slate-500 swiss-decorative-line pl-20">
-        <span class="absolute left-0 top-1/2 -translate-y-1/2 w-16 h-px bg-slate-900 opacity-20"></span>
-        Правовая Основа
-      </p>
+      <div class="mb-6 flex items-center justify-center gap-4">
+        <span class="w-12 h-px bg-slate-900 opacity-20"></span>
+        <p class="text-xs tracking-widest font-medium uppercase text-slate-500 swiss-decorative-line">
+          Правовая Основа
+        </p>
+        <span class="w-12 h-px bg-slate-900 opacity-20"></span>
+      </div>
       <h2 class="text-3xl md:text-4xl font-bold tracking-tight font-serif" style="color: #243468;">
         Работаем только в "белом" правовом поле
       </h2>
@@ -44,7 +47,8 @@
           </div>
         </div>
         <div class="p-8 bg-stone-50 border-b border-slate-200">
-          <h4 class="text-base font-bold mb-3 uppercase tracking-wider" style="color: #243468;">Включены в реестр ФССП</h4>
+          <h4 class="text-base font-bold mb-3 uppercase tracking-wider" style="color: #243468;">Включены в реестр ФССП
+          </h4>
           <p class="text-slate-700 text-sm leading-relaxed">
             Мы — официальная компания, имеющая право вести деятельность по возврату
             просроченной задолженности (ФЗ-230). Это наша лицензия.

@@ -13,10 +13,13 @@
     <div class="mb-12 text-center relative">
       <div class="absolute left-1/2 top-0 -translate-x-1/2 w-24 h-px bg-slate-900 opacity-10"></div>
       <div class="absolute left-1/2 bottom-0 -translate-x-1/2 w-24 h-px bg-slate-900 opacity-10"></div>
-      <p class="text-xs tracking-widest font-medium mb-6 relative uppercase text-slate-500 pl-20">
-        <span class="absolute left-0 top-1/2 -translate-y-1/2 w-16 h-px bg-slate-900 opacity-20"></span>
-        Кейсы
-      </p>
+      <div class="mb-6 flex items-center justify-center gap-4">
+        <span class="w-12 h-px bg-slate-900 opacity-20"></span>
+        <p class="text-xs tracking-widest font-medium uppercase text-slate-500">
+          Кейсы
+        </p>
+        <span class="w-12 h-px bg-slate-900 opacity-20"></span>
+      </div>
       <h2 class="text-3xl md:text-4xl font-bold tracking-tight font-serif" style="color: #243468;">
         Примеры ситуаций, которые мы решили
       </h2>
@@ -24,7 +27,8 @@
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-0 max-w-5xl mx-auto border border-slate-200 rounded-none">
       @foreach($cases as $index => $caseItem)
         <div class="p-8 {{ $index === 0 ? 'lg:border-r border-b lg:border-b-0' : '' }} border-slate-200 bg-white">
-          <h3 class="text-base font-bold mb-4 uppercase tracking-wider text-slate-900">Клиент: {{ $caseItem['name'] }} ({{ $caseItem['type'] }})</h3>
+          <h3 class="text-base font-bold mb-4 uppercase tracking-wider text-slate-900">Клиент: {{ $caseItem['name'] }}
+            ({{ $caseItem['type'] }})</h3>
           <div class="overflow-x-auto">
             <table class="w-full text-left text-sm border-collapse">
               <thead>

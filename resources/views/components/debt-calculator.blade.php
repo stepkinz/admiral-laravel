@@ -8,10 +8,13 @@
     <div class="text-center mb-8 relative">
       <div class="absolute left-1/2 top-0 -translate-x-1/2 w-24 h-px bg-slate-900 opacity-10"></div>
       <div class="absolute left-1/2 bottom-0 -translate-x-1/2 w-24 h-px bg-slate-900 opacity-10"></div>
-      <p class="text-xs tracking-widest font-medium mb-6 relative uppercase text-slate-500 pl-20">
-        <span class="absolute left-0 top-1/2 -translate-y-1/2 w-16 h-px bg-slate-900 opacity-20"></span>
-        Калькулятор
-      </p>
+      <div class="mb-6 flex items-center justify-center gap-4">
+        <span class="w-12 h-px bg-slate-900 opacity-20"></span>
+        <p class="text-xs tracking-widest font-medium uppercase text-slate-500">
+          Калькулятор
+        </p>
+        <span class="w-12 h-px bg-slate-900 opacity-20"></span>
+      </div>
       <h2 class="text-3xl md:text-4xl font-bold tracking-tight font-serif mb-6" style="color: #243468;">
         Комфортные условия погашения долга
       </h2>
