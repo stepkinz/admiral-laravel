@@ -14,7 +14,6 @@
 
       <x-step-by-step />
       <x-case-studies />
-      <x-team-section />
       <x-debt-calculator />
       <x-reviews :reviews="$reviews" />
       <x-faq :faqs="$faqs" />
