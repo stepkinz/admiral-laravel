@@ -38,5 +38,6 @@
         Заявка отправлена. Мы свяжемся с вами в ближайшее время.
       </div>
     @endif
+    <x-floating-phone-checker />
   </div>
 </x-layouts.app>
